@@ -19,7 +19,7 @@ namespace Hotel_App
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "SELECT * FROM rooms";
+            comm.CommandText = "SELECT name As Client,phone,startdate As From ,enddate as To ,room_id As Room FROM reservations WHERE CURRENT_DATE>=startdate AND CURRENT_DATE < enddate;";
 
             NpgsqlDataReader dr = comm.ExecuteReader();
             if (dr.HasRows)
@@ -30,6 +30,11 @@ namespace Hotel_App
             }
             comm.Dispose();
             conn.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
