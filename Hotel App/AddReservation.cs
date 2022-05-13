@@ -47,8 +47,6 @@ namespace Hotel_App
         {
             var name = textBox1.Text;
             var phone = textBox2.Text;
-            var from = (dateTimePicker1.Value.Year+"-"+dateTimePicker1.Value.Month+"-"+dateTimePicker1.Value.Day);
-            var to = (dateTimePicker2.Value.Year + "-" + dateTimePicker2.Value.Month + "-" + dateTimePicker2.Value.Day);
             var room = comboBox1.SelectedItem;
 
             Debug.WriteLine(room);
@@ -58,9 +56,13 @@ namespace Hotel_App
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            //comm.CommandText = "INSERT INTO reservations(name,phone,startdate,enddate,room_id) VALUES('"+name+"''"+phone+"''"+from+"''"+to+"'"+room+");";
-            comm.CommandText = "INSERT INTO reservations(name,phone,startdate,enddate,room_id) VALUES(@name,@phone,@from,@to,room);";
-            Debug.WriteLine("INSERT INTO reservations(name,phone,startdate,enddate,room_id) VALUES('" + name + "','" + phone + "','" + from + "','" + to + "'," + room + ");");
+            comm.CommandText = "INSERT INTO reservations(name,phone,startdate,enddate,room_id) VALUES(@name,@phone,@from,@to,@room);";
+            comm.Parameters.AddWithValue("@name", name);
+            comm.Parameters.AddWithValue("@phone", phone);
+            comm.Parameters.AddWithValue("@from", dateTimePicker1.Value.Date);
+            comm.Parameters.AddWithValue("@to", dateTimePicker2.Value.Date);
+            comm.Parameters.AddWithValue("@room", room);
+
             NpgsqlDataReader dr = comm.ExecuteReader();
 
             comm.Dispose();
