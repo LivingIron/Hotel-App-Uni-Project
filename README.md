@@ -16,3 +16,5 @@
 ![Screenshot 2022-05-14 013558](https://user-images.githubusercontent.com/29221743/168397837-7ed8f287-0ddd-4bb7-a066-8ffd7d1e87ba.png)
 
 ## Database Table Structure
+
+![Screenshot 2022-05-14 014104](https://user-images.githubusercontent.com/29221743/168398006-a0642128-ea8b-4ed4-9cd1-bae5f5713c74.png)
