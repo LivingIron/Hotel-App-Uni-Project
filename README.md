@@ -18,3 +18,7 @@
 ## Database Table Structure
 
 ![Screenshot 2022-05-14 014104](https://user-images.githubusercontent.com/29221743/168398006-a0642128-ea8b-4ed4-9cd1-bae5f5713c74.png)
+
+## BG Documentation
+
+https://docs.google.com/document/d/1NWzsKq-BGg6bMk2lKeZ5PvKnT-qjcpDUB47uwycgwp8/edit
